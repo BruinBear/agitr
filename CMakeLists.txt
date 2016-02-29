@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(agitr)
 
 # Find the catkin build system, and any other packages on which we depend.
-find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs turtlesim std_srvs)
+find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs)
 
 # Declare our catkin package.
 catkin_package()
@@ -15,6 +15,10 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 
 # Declare the executable, along with its source files.
 add_executable(hello hello.cpp)
+add_executable(pubvel pubvel.cpp)
+add_executable(subpose subpose.cpp)
 
 # Specify libraries against which to link.
 target_link_libraries(hello ${catkin_LIBRARIES})
+target_link_libraries(pubvel ${catkin_LIBRARIES})
+target_link_libraries(subpose ${catkin_LIBRARIES})
